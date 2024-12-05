@@ -1,0 +1,126 @@
+/* Estilos Generales */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #1d2b64, #f8cdda); /* Fondo suave */
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenedor principal */
+.container {
+    background: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Título */
+h1 {
+    font-size: 3rem;
+    color: #ff6347; /* Tomate vibrante */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+p.lead {
+    font-size: 1.2rem;
+    color: #f8cdda; /* Color suave */
+}
+
+/* Tarjetas (para cada paso) */
+.card {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+    border-bottom: 2px solid #ff6347; /* Borde inferior */
+}
+
+.card-body {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    color: #f8cdda;
+    margin-bottom: 15px;
+}
+
+/* Botones */
+.btn {
+    border-radius: 30px;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Efecto hover para botones */
+.btn:hover {
+    transform: scale(1.05);
+}
+
+/* Botón de Volver a la Página Principal */
+footer .btn {
+    background: linear-gradient(45deg, #ff6347, #ff4500);
+    color: white;
+    margin-top: 30px;
+    padding: 12px 25px;
+    border-radius: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+footer .btn:hover {
+    transform: translateY(-5px);
+    background: linear-gradient(45deg, #ff4500, #ff6347);
+}
+
+/* Media Queries para Pantallas Responsivas */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    p.lead {
+        font-size: 1.1rem;
+    }
+
+    .card-title {
+        font-size: 1.3rem;
+    }
+
+    .btn {
+        font-size: 1rem;
+        padding: 10px 25px;
+    }
+
+    footer .btn {
+        font-size: 1rem;
+        padding: 10px 25px;
+    }
+}
+
+/* Ajustes adicionales para mejorar la presentación en pantallas pequeñas */
+@media (max-width: 576px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .card {
+        margin-bottom: 20px;
+    }
+
+    .btn {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+}

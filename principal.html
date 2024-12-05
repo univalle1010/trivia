@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Trivia - Principal</title>
+    <link rel="stylesheet" href="principal.css">
+</head>
+
+<body>
+    <header>
+    <nav>
+        <div class="nav-logo">
+            <img src="trivialogodef.png" alt="Imagen de Logo" class="centered-image">
+        </div>
+        <div class="profile">
+            <h2>¡Bienvenido, <span id="user-name">Usuario</span>!</h2>
+            <p>Puntos: <span id="user-points">0</span></p>
+            <p>Monedas: <span id="user-coins">0</span></p>
+        </div>
+        <button id="logout">Cerrar sesión</button>
+    </nav>
+</header>
+
+
+    <main>
+        <section class="actions">
+           
+        </section>
+        <h1>Modos de juegos</h1>
+
+        <section class="games">
+            
+            <div class="game-mode">
+                <h2>Personajes (FACIL)</h2>
+                <p>Adivina el pesonaje de cada VIDEOJUEGO</p>
+                <a href="characters.html">
+                    <div class="game-box">
+                        <img src="personajescros.jpg" alt="Personajes">
+                        <button>Jugar</button>
+                    </div>
+                </a>
+            </div>
+            <div class="game-mode">
+                <h2>Música (MEDIO)</h2>
+                <p>Veamos que tanto de cultura musical de videojuegos tienes</p>
+                <a href="music.html">
+                    <div class="game-box">
+                        <img src="musicascros.jpg" alt="Música">
+                        <button>Jugar</button>
+                    </div>
+                </a>
+            </div>
+            <div class="game-mode">
+                <h2>Mapas (DIFICIL)</h2>
+                <p>Escribe los nombres correctos de los mapas videojuegos</p>
+                <a href="mapas.html">
+                    <div class="game-box">
+                        <img src="mapascross.jpg" alt="Mapas">
+                        <button>Jugar</button>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section class="store">
+            <h1>Tienda</h1>
+            <p>¿Quieres conseguir premios con las monedas que ganaste? Visita la tienda.</p>
+            <a href="tienda.html"><button>Ir a la tienda</button></a>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="acercade.html" class="footer-link">Acerca de</a>
+                <a href="apoyo.html" class="footer-link">Apoyo</a>
+                <a href="formulario.html" class="footer-link">Formulario</a>
+                <a href="dash.html" class="footer-link">Dashboard</a>
+                <a href="comprar.html" class="footer-link">Comprar en mi tienda</a>
+                <a href="problemas.html" class="footer-link">¿Problemas?</a>
+                <a href="contacto.html" class="footer-link">Contacto</a>
+            </div>
+            <div class="footer-social">
+                <a href="https://www.instagram.com/joseram_lm?igsh=MXU4Zjl5OGhrMTJkYg==" class="social-icon">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" style="width: 30px; height: 30px;">
+                </a>
+                <a href="https://www.facebook.com/share/15b41PcHa5/?mibextid=LQQJ4d" class="social-icon">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" style="width: 30px; height: 30px;">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="principal.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,140 @@
+/* Estilos Generales */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Degradado en tonos azules y morados */
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenedor Principal */
+.container {
+    background: rgba(0, 0, 0, 0.6); /* Fondo oscuro con un toque sutil de transparencia */
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* Sombra más suave */
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* Título */
+h1 {
+    font-size: 2.8rem;
+    color: #ff4081; /* Tomate vibrante */
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+}
+
+p.lead {
+    font-size: 1.3rem;
+    color: #e0f7fa; /* Color suave para el subtítulo */
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Estilo de la sección de FAQ */
+.faq-section .accordion-button {
+    background-color: #2575fc; /* Color vibrante para los botones */
+    color: #fff; /* Asegura que el texto sea blanco y legible */
+    font-size: 1.25rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+/* Efecto hover en los botones de la sección FAQ */
+.faq-section .accordion-button:hover {
+    background-color: #ff4081; /* Cambio de color al pasar el mouse */
+    transform: translateY(-3px); /* Efecto de elevación */
+}
+
+.faq-section .accordion-button:focus {
+    outline: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.faq-section .accordion-body {
+    background: rgba(0, 0, 0, 0.8); /* Fondo oscuro con un toque más profundo */
+    padding: 25px;
+    border-radius: 15px;
+    font-size: 1.1rem;
+    color: #f0f0f0; /* Texto claro y legible */
+    line-height: 1.6;
+    transition: background 0.3s ease;
+}
+
+/* Efecto hover en las respuestas */
+.faq-section .accordion-body:hover {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+/* Botones generales */
+.btn {
+    border-radius: 50px;
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    background-color: #ff4081; /* Color vibrante */
+    border: none;
+    transition: background 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+/* Efecto hover para los botones */
+.btn:hover {
+    background-color: #2575fc;
+    transform: scale(1.05); /* Efecto de ampliación */
+}
+
+/* Estilo para el botón "Volver a la Página Principal" */
+footer a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.2rem; /* Ajustar el tamaño del título */
+    }
+
+    .faq-section .accordion-button {
+        font-size: 1.1rem; /* Reducir el tamaño de los botones */
+    }
+
+    .faq-section .accordion-body {
+        font-size: 1rem; /* Ajustar el tamaño del texto */
+    }
+
+    .btn {
+        font-size: 1rem; /* Ajustar el tamaño de los botones */
+        padding: 10px 25px;
+    }
+}
+
+/* Estilo para dispositivos móviles muy pequeños */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8rem; /* Título más pequeño para pantallas más pequeñas */
+    }
+
+    p.lead {
+        font-size: 1.1rem; /* Reducir el tamaño del texto del subtítulo */
+    }
+
+    .faq-section .accordion-body {
+        font-size: 0.95rem; /* Reducir aún más el tamaño de las respuestas */
+    }
+
+    .faq-section .accordion-button {
+        font-size: 1rem; /* Botones más pequeños */
+    }
+
+    .btn {
+        font-size: 1rem; /* Botones más pequeños */
+        padding: 8px 20px;
+    }
+}

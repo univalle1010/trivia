@@ -1,0 +1,113 @@
+/* Estilo General */
+body {
+    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradiente de fondo atractivo */
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenedor Principal */
+.container {
+    padding: 30px 15px;
+    max-width: 1200px;
+}
+
+/* Título de la Página */
+h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* Subtítulo */
+p.lead {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    color: #e0f7fa;
+}
+
+/* Estilos del Formulario */
+.card {
+    border-radius: 15px;
+}
+
+.card-body {
+    padding: 40px;
+}
+
+.form-label {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #f8cdda;
+}
+
+.form-control {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 1rem;
+    color: #fff;
+}
+
+.form-control:focus {
+    background: rgba(255, 255, 255, 0.3);
+    outline: none;
+    border-color: #ff4081;
+    box-shadow: 0 0 8px rgba(255, 64, 129, 0.7);
+}
+
+button[type="submit"] {
+    background-color: #ff4081;
+    border: none;
+    border-radius: 50px;
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #ff267f;
+}
+
+footer {
+    color: #fff;
+    margin-top: 30px;
+}
+
+footer .footer-link {
+    text-decoration: none;
+    color: #ff4081;
+    font-weight: bold;
+}
+
+footer .footer-link:hover {
+    color: #ff267f;
+    text-decoration: underline;
+}
+
+/* Ajustes Responsivos */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .card-body {
+        padding: 30px;
+    }
+
+    .form-label {
+        font-size: 1rem;
+    }
+
+    .form-control {
+        font-size: 0.95rem;
+    }
+
+    button[type="submit"] {
+        font-size: 1rem;
+    }
+}

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivina el Mapa - Juego de Adivinanza</title>
+    <link rel="stylesheet" href="mapas.css">
+</head>
+<body>
+    <!-- Header con perfil de usuario -->
+    <header>
+        <nav>
+            <div class="profile">
+                <h2>¡Bienvenido, <span id="user-name">Usuario</span>!</h2>
+                <p>Puntos: <span id="user-points">0</span></p>
+                <p>Monedas: <span id="user-coins">0</span></p>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="game-container">
+            <section class="map-section">
+                <button class="btn btn-info btn-sm back-button" onclick="window.location.href='principal.html'">Volver a la página principal</button>
+                <h2>¿De qué juego es este mapa?</h2>
+                <div class="map-image">
+                    <!-- Imagen del mapa -->
+                    <img src="https://example.com/mapa.jpg" alt="Imagen de un mapa de juego" id="mapImage">
+                </div>
+                <div class="input-container">
+                    <input type="text" id="gameGuess" placeholder="Escribe el nombre del juego..." autocomplete="off">
+                    <button id="submitGuess" class="btn">Adivinar</button>
+                    <button id="helpButton" class="btn" style="display: none;">Usar Monedas para Pasar</button> <!-- Botón de ayuda -->
+                </div>
+                <p id="resultMessage" class="result-message"></p>
+            </section>
+
+            <section class="hint-section">
+                <h3>Pistas</h3>
+                <p id="hintMessage">Este mapa es de un juego de disparos muy popular.</p>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer con enlaces y redes sociales -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="acercade.html" class="footer-link">Acerca de</a>
+                <a href="apoyo.html" class="footer-link">Apoyo</a>
+                <a href="formulario.html" class="footer-link">Formulario</a>
+                <a href="dash.html" class="footer-link">Dashboard</a>
+                <a href="comprar.html" class="footer-link">Comprar en mi tienda</a>
+                <a href="problemas.html" class="footer-link">¿Problemas?</a>
+                <a href="contacto.html" class="footer-link">Contacto</a>
+                <div class="footer-social">
+                    <a href="https://www.instagram.com/joseram_lm?igsh=MXU4Zjl5OGhrMTJkYg==" class="social-icon">🔗</a>
+                    <a href="https://www.facebook.com/share/15b41PcHa5/?mibextid=LQQJ4d" class="social-icon">🌐</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    
+
+    <script>
+        // Verificar si el usuario está logueado
+        if (localStorage.getItem("loggedIn") !== "true") {
+            window.location.href = "index.html";
+        }
+
+        // Obtener el nombre del usuario actual
+        const userName = localStorage.getItem("currentUser");
+
+        // Obtener datos del usuario
+        const userPoints = localStorage.getItem(`${userName}-points`) || 0;
+        const userCoins = localStorage.getItem(`${userName}-coins`) || 0;
+
+        // Mostrar los datos en la página
+        document.getElementById("user-name").textContent = userName;
+        document.getElementById("user-points").textContent = userPoints;
+        document.getElementById("user-coins").textContent = userCoins;
+
+        // Variables para el juego
+        let incorrectAttempts = 0;
+        let currentGameIndex = 0;
+        const games = [
+            {
+                correctAnswer: "Call of Duty",
+                hint: "Este mapa es de un juego de disparos muy popular.",
+                pointsReward: 10,
+                coinsReward: 20,
+                imagePath: "callofduty.webp"
+            },
+            {
+        correctAnswer: "Fortnite",
+        hint: "Este juego de batalla real tiene una mecánica de construcción.",
+        pointsReward: 10,
+        coinsReward: 20,
+        imagePath: "fortnite.jpg" // Ruta de la imagen
+    },
+    {
+        correctAnswer: "Minecraft",
+        hint: "Un juego en el que puedes construir y explorar mundos hechos de bloques.",
+        pointsReward: 10,
+        coinsReward: 20,
+        imagePath: "minecraft.png" // Ruta de la imagen
+    },
+    {
+        correctAnswer: "Overwatch",
+        hint: "Un juego en el que hay modos de juegos, con diferentes personajes",
+        pointsReward: 10,
+        coinsReward: 20,
+        imagePath: "overwatch.jpg" // Ruta de la imagen
+    },
+    {
+        "correctAnswer": "Apex Legends",
+        "hint": "Un juego de batalla real con héroes y habilidades únicas.",
+        "pointsReward": 10,
+        "coinsReward": 20,
+        "imagePath": "apexlegends.jpg" // Ruta de la imagen
+    },
+    {
+        "correctAnswer": "League of Legends",
+        "hint": "Un juego de estrategia y combates en línea con personajes únicos.",
+        "pointsReward": 10,
+        "coinsReward": 20,
+        "imagePath": "League of Legends.jpg" // Ruta de la imagen
+    },
+            // Otros juegos...
+        ];
+
+        // Mostrar la pista y la imagen del juego actual
+        function displayGame() {
+            const currentGame = games[currentGameIndex];
+            document.getElementById("hintMessage").textContent = currentGame.hint;
+            document.getElementById("mapImage").src = currentGame.imagePath;
+            incorrectAttempts = 0;
+            document.getElementById("helpButton").style.display = "none"; // Ocultar botón de ayuda
+        }
+
+        // Llamar a la función para mostrar el juego al cargar la página
+        displayGame();
+
+        // Función para restar monedas
+        function subtractCoins(amount) {
+            const currentCoins = parseInt(localStorage.getItem(`${userName}-coins`)) || 0;
+
+            if (currentCoins >= amount) {
+                const newCoins = currentCoins - amount;
+                localStorage.setItem(`${userName}-coins`, newCoins);
+                document.getElementById("user-coins").textContent = newCoins;
+                alert(`¡Has usado ${amount} monedas para pasar al siguiente nivel!`);
+                // Pasar al siguiente nivel
+                currentGameIndex = (currentGameIndex + 1) % games.length;
+                displayGame();
+            } else {
+                alert("No tienes suficientes monedas.");
+            }
+        }
+
+        // Manejar el clic en el botón "Adivinar"
+        document.getElementById("submitGuess").addEventListener("click", function() {
+            const userGuess = document.getElementById("gameGuess").value.trim().toLowerCase();
+            const currentGame = games[currentGameIndex];
+
+            // Limpiar mensaje anterior antes de mostrar uno nuevo
+            document.getElementById("resultMessage").textContent = "";
+
+            // Verificar si la respuesta es correcta
+            if (userGuess === currentGame.correctAnswer.toLowerCase()) {
+                document.getElementById("resultMessage").textContent = "¡Correcto! Has adivinado el mapa.";
+                document.getElementById("resultMessage").style.color = "#4caf50";
+                addPoints(currentGame.pointsReward);
+                addCoins(currentGame.coinsReward);
+                // Pasar al siguiente juego
+                currentGameIndex = (currentGameIndex + 1) % games.length;
+                displayGame();
+            } else {
+                document.getElementById("resultMessage").textContent = "¡Incorrecto! Intenta de nuevo.";
+                document.getElementById("resultMessage").style.color = "#e74c3c";
+                incorrectAttempts++;
+
+                // Si el usuario ha fallado 3 veces, mostrar el botón de ayuda
+                if (incorrectAttempts >= 3) {
+                    document.getElementById("helpButton").style.display = "inline-block"; // Mostrar el botón de ayuda
+                }
+            }
+
+            // Limpiar el campo de entrada
+            document.getElementById("gameGuess").value = "";
+
+            // Limpiar el mensaje después de 2 segundos
+            setTimeout(() => {
+                document.getElementById("resultMessage").textContent = ""; // Limpiar el mensaje
+            }, 2000);
+        });
+
+        // Manejar el clic en el botón de ayuda (restar monedas y pasar al siguiente nivel)
+        document.getElementById("helpButton").addEventListener("click", function() {
+            subtractCoins(20); // Restar 20 monedas
+        });
+
+        // Función para añadir puntos
+        function addPoints(amount) {
+            const currentPoints = parseInt(localStorage.getItem(`${userName}-points`)) || 0;
+            const newPoints = currentPoints + amount;
+            localStorage.setItem(`${userName}-points`, newPoints);
+            document.getElementById("user-points").textContent = newPoints;
+            alert(`¡Has ganado ${amount} puntos!`);
+        }
+
+        // Función para añadir monedas
+        function addCoins(amount) {
+            const currentCoins = parseInt(localStorage.getItem(`${userName}-coins`)) || 0;
+            const newCoins = currentCoins + amount;
+            localStorage.setItem(`${userName}-coins`, newCoins);
+            document.getElementById("user-coins").textContent = newCoins;
+            alert(`¡Has ganado ${amount} monedas!`);
+        }
+    </script>
+</body>
+</html>

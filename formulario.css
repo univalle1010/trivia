@@ -1,0 +1,179 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo general del cuerpo */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #4facfe, #00f2fe); /* Gradiente vibrante */
+    color: #fff;
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Contenedor del formulario */
+.form-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-content {
+    background: rgba(0, 0, 0, 0.7); /* Fondo oscuro transparente */
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    backdrop-filter: blur(10px); /* Efecto de desenfoque de fondo */
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* Títulos */
+h1 {
+    font-size: 2.5rem;
+    color: #ff6347;
+    margin-bottom: 20px;
+}
+
+/* Estilos de los inputs y textareas */
+.input-group {
+    margin: 20px 0;
+    text-align: left;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    color: #333;
+    font-size: 1rem;
+    margin-top: 5px;
+    transition: all 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #ff6347;
+    background-color: #fff;
+}
+
+/* Botón de enviar */
+.btn {
+    background: linear-gradient(45deg, #ff6347, #ff4500); /* Gradiente para el botón */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+    background: linear-gradient(45deg, #ff4500, #ff6347);
+}
+
+.btn:active {
+    transform: translateY(1px);
+}
+
+/* Enlace de pie de página */
+.footer-link {
+    display: inline-block;
+    background: linear-gradient(45deg, #ff6347, #ff4500);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 1rem;
+    margin-top: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.footer-link:hover {
+    transform: translateY(-5px);
+    background: linear-gradient(45deg, #ff4500, #ff6347);
+}
+
+.footer-link:active {
+    transform: translateY(2px);
+}
+
+/* Animación de entrada para el formulario */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media Queries para hacer la página responsive */
+
+/* Para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+    .form-content {
+        width: 90%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .input-group label {
+        font-size: 1rem;
+    }
+
+    .input-group input, .input-group textarea {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+
+    .footer-link {
+        font-size: 1rem;
+        padding: 10px 15px;
+    }
+}
+
+/* Para pantallas muy pequeñas (móviles en modo retrato) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .input-group input, .input-group textarea {
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        font-size: 1rem;
+        padding: 8px 15px;
+    }
+
+    .footer-link {
+        font-size: 1rem;
+        padding: 8px 12px;
+    }
+}

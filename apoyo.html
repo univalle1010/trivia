@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Apoyo - FAQs</title>
+    <link rel="stylesheet" href="apoyo.css">
+</head>
+<body>
+    <div class="support-container">
+        <header>
+            <h1>¿Tienes Preguntas? Estamos Aquí para Ayudarte</h1>
+            <p>Consulta nuestras preguntas frecuentes (FAQs) para obtener respuestas rápidas. Si necesitas más ayuda, no dudes en contactarnos.</p>
+        </header>
+
+        <section class="faq-section">
+            <div class="faq-item">
+                <button class="faq-btn" onclick="toggleAnswer(5)">
+                    ¿Cómo adivino el mapa o personaje correctamente?
+                </button>
+                <div id="answer5" class="faq-answer">
+                    <p>Para adivinar correctamente, presta atención a las pistas y a las imágenes que se muestran en la pantalla. La clave está en reconocer los detalles, como el estilo del mapa o el diseño del personaje. Si dudas, ¡siempre puedes intentar más de una vez!</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-btn" onclick="toggleAnswer(6)">
+                    ¿Puedo cambiar el juego de mapas, personajes o música durante el juego?
+                </button>
+                <div id="answer6" class="faq-answer">
+                    <p>En la versión actual del juego, solo puedes adivinar un tipo de categoría a la vez. Primero debes completar todas las adivinanzas de un tipo (mapas, personajes o música) antes de pasar al siguiente tipo de juego.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-btn" onclick="toggleAnswer(7)">
+                    ¿Cómo puedo ganar más puntos y monedas en el juego?
+                </button>
+                <div id="answer7" class="faq-answer">
+                    <p>Ganas puntos y monedas cada vez que adivinas correctamente un mapa, un personaje o una canción. Además, completar niveles consecutivos y obtener respuestas rápidas te dará más recompensas.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-btn" onclick="toggleAnswer(8)">
+                    ¿Qué pasa cuando se me acaban los mapas/personajes/músicas para adivinar?
+                </button>
+                <div id="answer8" class="faq-answer">
+                    <p>Cuando completes todos los mapas, personajes o canciones disponibles, el juego te informará que has llegado al final. Puedes reiniciar el juego para empezar de nuevo con los primeros mapas o personajes.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-btn" onclick="toggleAnswer(9)">
+                    ¿Puedo jugar sin conexión a Internet?
+                </button>
+                <div id="answer9" class="faq-answer">
+                    <p>Actualmente, el juego requiere conexión a Internet para cargar las imágenes y pistas de los mapas y personajes. Sin embargo, una versión offline está en desarrollo y estará disponible pronto.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-btn" onclick="toggleAnswer(10)">
+                    ¿Cómo puedo sugerir un nuevo mapa o personaje para el juego?
+                </button>
+                <div id="answer10" class="faq-answer">
+                    <p>Si tienes ideas para nuevos mapas o personajes, puedes enviarlas a través del formulario de contacto en la página de soporte. ¡Nos encantaría recibir tus sugerencias y agregar contenido nuevo al juego!</p>
+                </div>
+            </div>
+
+            
+
+            <div class="faq-item">
+                <button class="faq-btn" onclick="toggleAnswer(3)">
+                    ¿Cómo puedo contactar con el soporte técnico?
+                </button>
+                <div id="answer3" class="faq-answer">
+                    <p>Puedes contactar con nuestro soporte técnico a través del formulario de contacto en la página de soporte, o enviando un correo a laimesoluciona@gmail.com</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-btn" onclick="toggleAnswer(4)">
+                    ¿Qué hacer si no puedo acceder a mi cuenta?
+                </button>
+                <div id="answer4" class="faq-answer">
+                    <p>Si no puedes acceder a tu cuenta, verifica si has ingresado correctamente tus credenciales. Si el problema persiste, contacta con soporte.</p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>¿No encuentras lo que buscas? <a href="contacto.html">Contáctanos aquí</a></p>
+            <!-- Botón de Volver a la Página Principal -->
+            <div class="faq-item">
+                <a href="principal.html" class="footer-link">Volver a la página principal</a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Función para alternar la visibilidad de las respuestas
+        function toggleAnswer(id) {
+            const answer = document.getElementById('answer' + id);
+            // Cambiar el estado de la respuesta (mostrar/ocultar)
+            if (answer.style.display === 'none' || answer.style.display === '') {
+                answer.style.display = 'block';
+            } else {
+                answer.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

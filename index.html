@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Trivia - Login</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <div class="logo">
+                <img src="trivialogodef.png" alt="Trivia Game Logo">
+            </div>
+            <h1>Game Trivia</h1>
+            <p>Únete al desafío</p>
+
+            <!-- Formulario de inicio de sesión -->
+            <form id="login-form">
+                <input type="text" id="username" placeholder="Usuario" required>
+                <input type="password" id="password" placeholder="Contraseña" required>
+                <button type="submit">Iniciar sesión</button>
+            </form>
+
+            <div id="login-toggle">
+                <p id="no-account-text">¿No tienes cuenta? <span id="show-register">Regístrate aquí</span></p>
+            </div>
+
+            <div id="register-box" style="display: none;">
+                <h3>Registro</h3>
+                <input type="text" id="new-username" placeholder="Nuevo Usuario" required>
+                <input type="password" id="new-password" placeholder="Nueva Contraseña" required>
+                <button type="button" id="register-btn">Registrar</button>
+                <div id="register-toggle">
+                    <p>¿Ya tienes cuenta? <span id="show-login">Inicia sesión</span></p>
+                </div>
+            </div>
+            
+
+            <p class="terms">Este código está hecho para una práctica de Univalle.</p>
+        </div>
+    </div>
+    <div id="custom-alert" class="custom-alert" style="display: none;">
+        <span id="alert-message"></span>
+        <button onclick="closeAlert()">Cerrar</button>
+    </div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,477 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos globales */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(45deg, #ff6a00, #ee0979);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #fff;
+    transition: background 0.5s ease-in-out;
+}
+
+/* Cabecera */
+header {
+    background: linear-gradient(45deg, #9b59b6, #da4607); /* Violeta y lavanda */
+
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between; /* Alinea el perfil y logout a la izquierda y derecha */
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(226, 218, 218, 0.4);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    transition: background-color 0.3s ease;
+    position: relative; /* Asegura que el logo se pueda posicionar en relación al header */
+}
+
+/* Cambiar el color de fondo al pasar el mouse */
+header:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Alineación para la imagen en el centro */
+.nav-logo {
+    position: absolute; /* Posiciona la imagen en relación al header */
+    top: 50%; /* Centra verticalmente */
+    left: 50%; /* Centra horizontalmente */
+    transform: translate(-50%, -50%); /* Ajuste para centrar exacto */
+}
+
+.centered-image {
+    max-height: 100px; /* Ajusta el tamaño de la imagen */
+    width: auto; /* Mantiene las proporciones de la imagen */
+}
+
+/* Perfil */
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Alinea el perfil a la derecha */
+}
+
+.profile h2 {
+    font-size: 1.6rem;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.profile p {
+    font-size: 1.1rem;
+    color: #f1f1f1;
+}
+
+/* Estilo del botón de logout */
+#logout {
+    padding: 12px 25px;
+    background-color: #ff6a00;
+    border: none;
+    color: white;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    position: absolute; /* Establece la posición absoluta */
+    right: 20px; /* Alinea el botón a la derecha */
+    top: 20px; /* Alinea el botón en la parte superior */
+}
+
+#logout:hover {
+    background-color: #ee0979;
+    transform: scale(1.05);
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+    header {
+        padding: 15px 25px;
+    }
+    .game-mode {
+        width: 250px;
+    }
+    .game-box {
+        height: 180px;
+    }
+    .store button {
+        padding: 12px 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .actions {
+        text-align: center;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+    }
+
+    .game-box {
+        width: 100%;
+        height: 180px;
+    }
+
+    .game-box img {
+        object-fit: cover;
+    }
+
+    footer {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        flex-direction: column;
+        padding: 10px 20px;
+    }
+
+    .profile h2 {
+        font-size: 1.3rem;
+    }
+
+    .game-box {
+        width: 100%;
+        height: 150px;
+    }
+
+    .store h2 {
+        font-size: 1.8rem;
+    }
+
+    .store button {
+        padding: 12px 25px;
+    }
+}
+
+
+
+/* Sección principal */
+main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 40px;
+    flex-direction: column;
+    transition: padding 0.3s ease;
+}
+
+.actions {
+    margin-bottom: 30px;
+    text-align: center;
+    animation: fadeIn 1s ease-out;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.action-buttons button {
+    padding: 15px 30px;
+    margin: 10px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.action-buttons button:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.action-buttons button:active {
+    transform: scale(0.98);
+}
+
+/* Sección de juegos */
+.games {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.game-mode {
+    text-align: center;
+    width: 300px;
+    margin: 20px;
+    animation: fadeInUp 1s ease-out;
+}
+
+.game-box {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease;
+}
+
+.game-box:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.game-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.game-box:hover img {
+    transform: scale(1.1);
+}
+
+.game-box button {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ff6a00;
+    color: white;
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.game-box button:hover {
+    background-color: #ee0979;
+    transform: translateY(-5px);
+}
+
+.game-box button:active {
+    background-color: #ff6a00;
+    transform: translateY(3px);
+}
+
+/* Sección tienda */
+.store {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.store h2 {
+    color: #fff;
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.store button {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    background-color: #ff6a00;
+    color: white;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.store button:hover {
+    background-color: #ee0979;
+    transform: translateY(-3px);
+}
+
+.store button:active {
+    transform: translateY(2px);
+}
+
+/* Footer */
+footer {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 30px 20px;
+    text-align: center;
+    font-size: 1rem;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+footer:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-links {
+    margin-bottom: 20px;
+}
+
+.footer-link {
+    color: #fff;
+    font-size: 1.1rem;
+    text-decoration: none;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: #ffeb3b;
+}
+
+.footer-social {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.social-icon {
+    color: #fff;
+    font-size: 1.8rem;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #ffeb3b;
+}
+.profile {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile h2 {
+    font-size: 1.6rem;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.profile p {
+    font-size: 1.1rem;
+    color: #f1f1f1;
+}
+
+#logout {
+    padding: 12px 25px;
+    background-color: #ff6a00;
+    border: none;
+    color: white;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    position: absolute; /* Establecer posición absoluta */
+    right: 20px; /* Mover el botón a la derecha */
+    top: 20px; /* Asegurarse de que quede alineado en la parte superior */
+}
+
+#logout:hover {
+    background-color: #ee0979;
+    transform: scale(1.05);
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+    header {
+        padding: 15px 25px;
+    }
+
+    .game-mode {
+        width: 250px;
+    }
+
+    .game-box {
+        height: 180px;
+    }
+
+    .store button {
+        padding: 12px 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .actions {
+        text-align: center;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+    }
+
+    .game-box {
+        width: 100%;
+        height: 180px;
+    }
+
+    .game-box img {
+        object-fit: cover;
+    }
+
+    footer {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        flex-direction: column;
+        padding: 10px 20px;
+    }
+
+    .profile h2 {
+        font-size: 1.3rem;
+    }
+
+    .game-box {
+        width: 100%;
+        height: 150px;
+    }
+
+    .store h2 {
+        font-size: 1.8rem;
+    }
+
+    .store button {
+        padding: 12px 25px;
+    }
+}

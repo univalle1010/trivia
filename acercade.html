@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acerca de</title>
+    <link rel="stylesheet" href="acercade.css">
+</head>
+<body>
+    <section class="about-container">
+        <div class="about-content">
+            <h1>Acerca de la Página</h1>
+            <p>¡Bienvenidos a la <strong>Plataforma de Adivinanza de Mapas!</strong> Un lugar donde tu conocimiento sobre videojuegos se pone a prueba. ¡Adivina los mapas de los juegos más populares y gana puntos y monedas!</p>
+            
+            <div class="creator-info">
+                <h2>Creado por:</h2>
+                <p><strong>Laime Miranda José Ramiro</strong></p>
+                <p>Apasionado por los videojuegos y la programación, Laime busca crear experiencias únicas que combinan aprendizaje y diversión.</p>
+            </div>
+
+            <button id="more-info" class="btn">Ver más detalles</button>
+            <div id="moreDetails" class="more-details">
+                <h3>Detalles adicionales:</h3>
+                <p>Desarrollado con tecnologías como HTML, CSS, y JavaScript, este proyecto refleja la pasión por el diseño interactivo y dinámico, ofreciendo una experiencia rica tanto en contenido como en usabilidad.</p>
+                <p>¡Gracias por visitar este proyecto y por unirte a la diversión!</p>
+            </div>
+            
+            <!-- Botón para volver a la página principal -->
+            <a href="principal.html" class="footer-link">Volver a la página principal</a>
+        </div>
+    </section>
+
+    <script>
+        // Función para mostrar los detalles adicionales
+document.getElementById("more-info").addEventListener("click", function() {
+    const moreDetails = document.getElementById("moreDetails");
+    
+    // Alternar la clase 'show' para mostrar/ocultar los detalles
+    moreDetails.classList.toggle("show");
+    
+    // Cambiar el texto del botón dependiendo del estado
+    if (moreDetails.classList.contains("show")) {
+        this.textContent = "Ver menos detalles";
+    } else {
+        this.textContent = "Ver más detalles";
+    }
+});
+
+
+    </script>
+</body>
+</html>

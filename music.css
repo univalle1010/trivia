@@ -1,0 +1,315 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(45deg, #ff6a00, #ee0979);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #fff;
+}
+/* Cabecera */
+header {
+    background-color: #ff5733; /* Rojo vibrante */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    border-bottom: 5px solid #ff2a00; /* Rojo más intenso para el borde */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra sutil */
+}
+
+.navbar {
+    background-color: #13ff07;
+    box-shadow: 0 4px 8px rgba(10, 224, 6, 0.997);
+    transition: background-color 0.3s ease;
+}
+
+.navbar:hover {
+    background-color: #00ff0d; /* Cambio de color en hover */
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.profile p {
+    font-size: 1.2rem;
+}
+
+.profile {
+    color: #fff;
+    text-align: right;
+}
+
+.profile p {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.profile button {
+    margin-top: 10px;
+    background-color: #F39C12; /* Amarillo suave */
+    color: #fff;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.profile button:hover {
+    background-color: #E67E22; /* Naranja más intenso en hover */
+    transform: translateY(-3px);
+}
+
+.profile button:active {
+    transform: translateY(0);
+}
+
+.profile button:focus {
+    outline: none;
+}
+
+/* Sección del juego */
+.game-section {
+    background-color: #FFFFFF; /* Blanco luminoso */
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    padding: 1rem 1rem;
+    text-align: center;
+    margin-top: 1px;
+    margin-bottom: 10rem;
+    max-height: 600;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: padding 0.3s ease;
+    background: linear-gradient(135deg, #FF6F61, #F39C12); /* Degradado de coral a amarillo */
+    color: #fff;
+}
+
+.game-section h3 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Botones del juego */
+.game-btn {
+    width: 100%;
+    font-size: 1.3rem;
+    padding: 16px;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    background-color: #27AE60; /* Verde menta */
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.game-btn:hover {
+    background-color: #2ECC71; /* Verde brillante */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.game-btn:active {
+    transform: translateY(0);
+}
+
+.game-btn:focus {
+    outline: none;
+}
+
+/* Mensaje correcto */
+.correct {
+    background-color: #28a745; /* Verde de éxito */
+    color: white;
+    transform: translateY(10px);
+}
+
+/* Mensaje incorrecto */
+.incorrect {
+    background-color: #dc3545; /* Rojo de error */
+    color: white;
+    transform: translateY(10px);
+}
+
+
+/* Botón para volver a la página principal */
+.back-button {
+    margin-top: 2rem;
+    padding: 12px 24px;
+    background-color: #3498DB; /* Azul brillante */
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.back-button:hover {
+    background-color: #2980B9; /* Azul más oscuro */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.back-button:active {
+    transform: translateY(0);
+}
+
+.back-button:focus {
+    outline: none;
+}
+
+/* Footer */
+footer {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 30px 20px;
+    text-align: center;
+    font-size: 1rem;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+footer:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-links {
+    margin-bottom: 20px;
+}
+
+.footer-link {
+    color: #fff;
+    font-size: 1.1rem;
+    text-decoration: none;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: #ffeb3b;
+}
+
+.footer-social {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.social-icon {
+    color: #fff;
+    font-size: 1.8rem;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #ffeb3b;
+}
+.profile {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile h2 {
+    font-size: 1.6rem;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.profile p {
+    font-size: 1.1rem;
+    color: #f1f1f1;
+}
+/* Ajustes Responsivos */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-links {
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .footer-social {
+        justify-content: center;
+    }
+
+    .game-section {
+        padding: 2rem;
+        margin-top: 2rem;
+    }
+
+    .game-section h3 {
+        font-size: 2rem;
+    }
+
+    .game-btn {
+        font-size: 1.1rem;
+        padding: 14px;
+    }
+
+    .profile button {
+        padding: 6px 12px;
+    }
+
+    .back-button {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+
+    #result-message {
+        font-size: 1.3rem;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .game-section {
+        padding: 1.5rem;
+    }
+
+    .game-section h3 {
+        font-size: 1.8rem;
+    }
+
+    .game-btn {
+        font-size: 1rem;
+        padding: 12px;
+    }
+
+    .back-button {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+
+    #result-message {
+        font-size: 1.2rem;
+        padding: 18px;
+    }
+}

@@ -1,0 +1,247 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo general del cuerpo */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #1d2b64, #f8cdda); /* Gradiente de fondo colorido */
+    color: #fff;
+    line-height: 1.6;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Contenedor principal */
+.about-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 10px; /* Espaciado para pantallas pequeñas */
+}
+
+/* Contenido de la página */
+.about-content {
+    background: rgba(0, 0, 0, 0.7); /* Fondo oscuro transparente */
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+    backdrop-filter: blur(10px); /* Efecto de desenfoque de fondo */
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* Títulos */
+h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #ff6347; /* Tomate color vibrante */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+    font-size: 2rem;
+    margin-top: 30px;
+    color: #e4ff7f; /* Color de texto vibrante */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+h3 {
+    font-size: 1.6rem;
+    margin-top: 20px;
+    color: #f8cdda;
+}
+
+/* Estilos de texto */
+p {
+    font-size: 1rem;
+    margin: 10px 0;
+    line-height: 1.6;
+    color: #f0f0f0;
+}
+
+/* Estilos del creador */
+.creator-info {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+}
+
+.creator-info p {
+    font-style: italic;
+    color: #b0e0e6; /* Color ligeramente azul */
+}
+
+/* Botón de interacción */
+.btn {
+    background: linear-gradient(45deg, #ff6347, #ff4500); /* Botón con gradiente */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+    background: linear-gradient(45deg, #ff4500, #ff6347);
+}
+
+.btn:active {
+    transform: translateY(1px);
+}
+
+/* Detalles adicionales */
+.more-details {
+    display: none;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    color: #f0f0f0;
+    font-size: 0.9rem;
+}
+
+/* Animación de entrada para el contenedor principal */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animación para mostrar los detalles */
+@keyframes fadeInDetails {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.more-details.show {
+    display: block;
+    animation: fadeInDetails 0.5s ease-out;
+}
+
+/* Estilo del enlace de pie de página */
+.footer-link {
+    display: inline-block;
+    background: linear-gradient(45deg, #ff6347, #ff4500); /* Gradiente suave para el botón */
+    color: white;
+    padding: 12px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin-top: 30px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+/* Efectos al pasar el ratón sobre el enlace */
+.footer-link:hover {
+    transform: translateY(-5px);
+    background: linear-gradient(45deg, #ff4500, #ff6347);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Efectos al hacer clic sobre el enlace */
+.footer-link:active {
+    transform: translateY(2px);
+}
+
+/* Media Queries para hacer la página responsive */
+
+/* Para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .about-content {
+        padding: 20px;
+        width: 90%; /* Ajustar el contenido a pantallas más pequeñas */
+        max-width: 100%;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.4rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+
+    .footer-link {
+        padding: 10px 15px;
+        font-size: 1rem;
+    }
+}
+
+/* Para pantallas muy pequeñas (móviles en modo retrato) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    .about-content {
+        padding: 15px;
+    }
+
+    .btn {
+        font-size: 1rem;
+        padding: 8px 15px;
+    }
+
+    .footer-link {
+        font-size: 1rem;
+        padding: 8px 12px;
+    }
+
+    .creator-info {
+        padding: 15px;
+    }
+}

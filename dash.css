@@ -1,0 +1,205 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos generales */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #3a3a3a, #141414);
+    color: #eee;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow-x: hidden;
+}
+
+/* Contenedor principal del dashboard */
+.dashboard-container {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    min-height: 100vh;
+    background: #222;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+/* Barra lateral */
+.sidebar {
+    width: 250px;
+    background: linear-gradient(135deg, #ff6347, #ff4500);
+    color: white;
+    padding: 40px 20px;
+    height: 100vh;
+    position: relative;
+}
+
+.sidebar .logo h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.sidebar nav ul li {
+    margin: 25px 0;
+}
+
+.sidebar nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.4rem;
+    display: block;
+    padding: 15px 20px;
+    border-radius: 10px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.sidebar nav ul li a:hover {
+    background: #ff4500;
+    transform: translateX(10px);
+}
+
+/* Contenido principal */
+.main-content {
+    flex-grow: 1;
+    padding: 40px;
+    background: #181818;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    color: #fff;
+}
+
+header h1 {
+    font-size: 3rem;
+    color: #ff6347;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+header p {
+    font-size: 1.3rem;
+    color: #aaa;
+    margin-bottom: 30px;
+}
+
+/* Estilo de las tarjetas de información de los juegos */
+.games-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.game-card {
+    background: #1c1c1c;
+    border: 1px solid #333;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+}
+
+.game-card h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #ff6347;
+}
+
+.game-card p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #bbb;
+}
+
+/* Estilo del enlace de pie de página */
+.footer-link {
+    display: inline-block;
+    background: linear-gradient(45deg, #ff6347, #ff4500);
+    color: white;
+    padding: 15px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 1.4rem;
+    margin-top: 40px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.footer-link:hover {
+    transform: translateY(-5px);
+    background: linear-gradient(45deg, #ff4500, #ff6347);
+}
+
+.footer-link:active {
+    transform: translateY(3px);
+}
+
+/* Estilo responsivo */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+        padding: 30px 15px;
+    }
+
+    .main-content {
+        padding: 25px;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    .games-info {
+        grid-template-columns: 1fr;
+    }
+
+    .game-card {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar {
+        width: 100%;
+        position: relative;
+        height: auto;
+    }
+
+    .dashboard-container {
+        flex-direction: column;
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .games-info {
+        grid-template-columns: 1fr;
+    }
+
+    .game-card {
+        margin-bottom: 15px;
+    }
+}
